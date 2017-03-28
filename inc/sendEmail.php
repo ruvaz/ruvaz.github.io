@@ -48,7 +48,7 @@ if($nombre && $email && $mensaje){$resultado=1;}else{$resultado=0;}
 //Texto de el exito del envio del email
 if ($resultado) {// si se envio correctamente.
 	//echo  1;
-	echo "<span class='success'>Su mensaje ha sido recibido satisfactoriamente.</span>";
+	echo "OK";
 } else
 
 	 echo "<span class='error'>No se ha podido enviar correctamente su información, por favor intente nuevamente.</span>";
