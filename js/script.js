@@ -139,7 +139,7 @@ $(window).load(function() {
                 s = "contactName=" + t + "&contactEmail=" + a + "&contactSubject=" + n + "&contactMessage=" + c + "&captcha=" + r;
             return e.ajax({
                 type: "POST",
-                url: "inc/sendEmail.php",
+                url: "http://www.dev.miweb.mx/static/github/sendEmail.php",
                 data: s,
                 success: function(t) {
                     "OK" == t ? (e("#image-loader").fadeOut(), e("#message-warning").hide(), e("#contactForm").fadeOut(), e("#message-success").fadeIn()) : (e("#image-loader").fadeOut(), e("#message-warning").html(t), e("#message-warning").fadeIn())
