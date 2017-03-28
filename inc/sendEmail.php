@@ -43,7 +43,8 @@ $headers .= 'Bcc: ruben@miweb.mx' . "\r\n";
 
 $resultado = mail($to, $subject, $message, $headers);  //el mail para empresa
 //ejecucion del envio del correo
-if($nombre && $email &&$plan && $mensaje){$resultado=1;}else{$resultado=0;}
+if($nombre && $email && $mensaje){$resultado=1;}else{$resultado=0;}
+
 //Texto de el exito del envio del email
 if ($resultado) {// si se envio correctamente.
 	//echo  1;
@@ -52,7 +53,7 @@ if ($resultado) {// si se envio correctamente.
 
 	 echo "<span class='error'>No se ha podido enviar correctamente su información, por favor intente nuevamente.</span>";
 
-//Enviando auto respuesta.
+//Enviando auto respuesta para Cliente
 $pfw_header = "From: \"ruvaz.github.io \" $correo\n";
 $pfw_header .= "Return-path: \"ruvaz.github.io\" $correo\n";
 $pfw_header .= "Mime-Version: 1.0\n";
