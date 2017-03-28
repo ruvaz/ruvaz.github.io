@@ -742,16 +742,11 @@ awards {
 .informix {
     background: #408000;
     width: 75%;
-    -moz-animation: android 2s ease;
-    -webkit-animation: android 2s ease
+    -moz-animation: informix 2s ease;
+    -webkit-animation: informix 2s ease
 }
 
-.photoshop {
-    background: #0080FFFF;
-    width: 60%;
-    -moz-animation: photoshop 2s ease;
-    -webkit-animation: photoshop 2s ease
-}
+
 
 .JavaJ2SE {
     background: #e74c3c;
@@ -760,19 +755,43 @@ awards {
     -webkit-animation: JavaJ2SE 2s ease
 }
 
-.composer {
-    background: #34495e;
-    width: 70%;
-    -moz-animation: wordpress 2s ease;
-    -webkit-animation: wordpress 2s ease
-}
+
+
 
 .php {
     background: #34495e;
-    width: 85%;
+    width:90%;
     -moz-animation: php 2s ease;
     -webkit-animation: php 2s ease
 }
+
+.javascript {
+    background: orange;
+    width: 65%;
+    -moz-animation: javascript 2s ease;
+    -webkit-animation: javascript 2s ease
+}
+.perl {
+    background: purple;
+    width: 50%;
+    -moz-animation: perl 2s ease;
+    -webkit-animation: perl 2s ease
+}
+.c {
+    background: navy;
+    width: 50%;
+    -moz-animation: c 2s ease;
+    -webkit-animation: c 2s ease
+}
+.basic {
+    background: #004080FF;
+    width: 50%;
+    -moz-animation: basic 2s ease;
+    -webkit-animation: basic 2s ease
+}
+
+
+
 
 .css {
     background: #3498db;
@@ -780,19 +799,30 @@ awards {
     -moz-animation: css 2s ease;
     -webkit-animation: css 2s ease
 }
+.html5 {
+    background: #d35400;
+    width: 90%;
+    -moz-animation: html5 2s ease;
+    -webkit-animation: html5 2s ease
+}
 .sql {
     background: #008080;
     width: 80%;
-    -moz-animation: html5 2s ease;
-    -webkit-animation: html5 2s ease
+    -moz-animation: sql 2s ease;
+    -webkit-animation: sql 2s ease
 }
-.html5 {
-    background: #d35400;
-    width: 80%;
-    -moz-animation: html5 2s ease;
-    -webkit-animation: html5 2s ease
+.laravel {
+    background: #FF0000;
+    width: 85%;
+    -moz-animation: laravel 2s ease;
+    -webkit-animation: laravel 2s ease
 }
-
+.composer {
+    background: #34495e;
+    width: 75%;
+    -moz-animation: composer 2s ease;
+    -webkit-animation: composer 2s ease
+}
 .jquery {
     background: #9b59b6;
     width: 70%;
@@ -801,104 +831,43 @@ awards {
 }
 
 
-.ingles {
-    background: #00F;
-    width: 50%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
+.angular {
+    background: red;
+    width: 60%;
+    -moz-animation: angular 2s ease;
+    -webkit-animation: angular 2s ease
 }
-.shell {
-    background: #80040F;
-    width: 70%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
-}
-.diseño {
-    background: #0080FF;
-    width: 50%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
-}
-.seo {
-    background: #8000FF;
-    width: 50%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
-}
-.performance {
-    background: #6666FF;
-    width: 50%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
-}
-.responsive {
-    background: #FF0000;
-    width: 50%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
+.net {
+    background: #40080;
+    width: 40%;
+    -moz-animation: net 2s ease;
+    -webkit-animation: net 2s ease
 }
 
+
+.photoshop {
+    background: #0080FFFF;
+    width: 60%;
+    -moz-animation: photoshop 2s ease;
+    -webkit-animation: photoshop 2s ease
+}
 .ilustrator {
     background: #FF8000FF;
     width: 50%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
+    -moz-animation: ilustrator 2s ease;
+    -webkit-animation: ilustrator 2s ease
 }
 .acorn {
     background: blue;
     width: 50%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
+    -moz-animation: acorn 2s ease;
+    -webkit-animation: acorn 2s ease
 }
 .fireworks {
     background: orange;
     width: 50%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
-}
-.ionic {
-    background: orange;
-    width: 35%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
-}
-
-.javascript {
-    background: orange;
-    width: 65%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
-}
-.perl {
-    background: purple;
-    width: 50%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
-}
-.c {
-    background: navy;
-    width: 50%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
-}
-.basic {
-    background: #004080FF;
-    width: 50%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
-}
-
-.angular {
-    background: red;
-    width: 60%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
-}
-.net {
-    background: #40080;
-    width: 60%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
+    -moz-animation: fireworks 2s ease;
+    -webkit-animation: fireworks 2s ease
 }
 
 
@@ -906,45 +875,98 @@ awards {
 .phpstorm {
     background: #8000FF;
     width: 80%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
+    -moz-animation: phpstorm 2s ease;
+    -webkit-animation: phpstorm 2s ease
 }
 .webstorm {
-    background: #00FFFF;
+    background: #0080FF;
     width: 70%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
+    -moz-animation: webstorm 2s ease;
+    -webkit-animation: webstorm 2s ease
 }
 .sublime {
     background: #800000;
     width: 90%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
+    -moz-animation: sublime 2s ease;
+    -webkit-animation: sublime 2s ease
 }
 .brackets {
     background: #FF8000;
     width: 60%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
+    -moz-animation: brackets 2s ease;
+    -webkit-animation: brackets 2s ease
 }
 .eclipse {
     background: #FF0080;
     width: 80%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
+    -moz-animation: eclipse 2s ease;
+    -webkit-animation: eclipse 2s ease
 }
 .netbeans {
-    background: #00FF00;
+    background: #80FF00;
     width: 50%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
+    -moz-animation: netbeans 2s ease;
+    -webkit-animation: netbeans 2s ease
 }
 .visual {
     background: #8000FF;
     width: 70%;
-    -moz-animation: jquery 2s ease;
-    -webkit-animation: jquery 2s ease
+    -moz-animation: visual 2s ease;
+    -webkit-animation: visual 2s ease
 }
+
+
+
+.ingles {
+    background: #00F;
+    width: 45%;
+    -moz-animation: ingles 2s ease;
+    -webkit-animation: ingles 2s ease
+}
+.shell {
+    background: #80040F;
+    width: 80%;
+    -moz-animation: shell 2s ease;
+    -webkit-animation: shell 2s ease
+}
+.diseño {
+    background: #0080FF;
+    width: 80%;
+    -moz-animation: diseño 2s ease;
+    -webkit-animation: diseño 2s ease
+}
+.seo {
+    background: #8000FF;
+    width: 70%;
+    -moz-animation: seo 2s ease;
+    -webkit-animation: seo 2s ease
+}
+.performance {
+    background: #6666FF;
+    width: 90%;
+    -moz-animation: performance 2s ease;
+    -webkit-animation: performance 2s ease
+}
+.responsive {
+    background: #FF0000;
+    width: 80%;
+    -moz-animation: responsive 2s ease;
+    -webkit-animation: responsive 2s ease
+}
+
+
+
+
+.ionic {
+    background: orange;
+    width: 35%;
+    -moz-animation: ionic 2s ease;
+    -webkit-animation: ionic 2s ease
+}
+
+
+
+
 
 @-moz-keyframes android {
     0% {
