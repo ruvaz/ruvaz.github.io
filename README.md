@@ -1,2 +1,0 @@
-# ruvaz.github.io
-Profile
