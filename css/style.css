@@ -830,7 +830,12 @@ awards {
     -webkit-animation: jquery 2s ease
 }
 
-
+.vue {
+    background: green;
+    width: 70%;
+    -moz-animation: vue 2s ease;
+    -webkit-animation: vue 2s ease
+}
 .angular {
     background: red;
     width: 60%;
@@ -839,7 +844,7 @@ awards {
 }
 .net {
     background: #40080;
-    width: 40%;
+    width: 45%;
     -moz-animation: net 2s ease;
     -webkit-animation: net 2s ease
 }
