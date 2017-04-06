@@ -1320,8 +1320,9 @@ awards {
 }
 
 .uso{
-    font-size: 10px;
-    color: gray;
+    font-size: 11px;
+    color: #53a5ff;
+    font-weight: 500;
 }
 
 .popup-modal .link-box {
