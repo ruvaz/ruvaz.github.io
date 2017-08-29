@@ -100,9 +100,9 @@ $(window).load(function() {
         }), map.addMarker({
             lat: 120.6121334,
             lng: -100.4453224,
-            title: "BD InfoSys",
+            title: "",
             infoWindow: {
-                content: "<p>Building # 2, Plot # 111, Road # 35, Gulshan - 2, Dhaka</p>"
+                content: "<p></p>"
             }
         }), e("form#contactForm button.submit").click(function() {
             e("#image-loader").fadeIn();
