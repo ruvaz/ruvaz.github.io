@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>404 - Page Not Found</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="c3m1.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .fake-404 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 100%);
+            color: #888;
+            font-family: 'Inter', sans-serif;
+        }
+        .fake-404 h1 { font-size: 8rem; margin: 0; color: #444; }
+        .fake-404 p { font-size: 1.2rem; margin-top: 1rem; }
+        .fake-404 a { color: #0ea5e9; text-decoration: none; margin-top: 2rem; }
+        .fake-404 a:hover { text-decoration: underline; }
+        .hidden-trigger { position: fixed; bottom: 10px; right: 10px; width: 20px; height: 20px; cursor: pointer; opacity: 0.3; }
+        .hidden-trigger:hover { opacity: 0.6; background: rgba(255,255,255,0.1); border-radius: 3px; }
+        .admin-content { display: none; }
+    </style>
+</head>
+<body>
+    <!-- Fake 404 Page -->
+    <div class="fake-404" id="fake-404">
+        <h1>404</h1>
+        <p>La página que buscas no existe.</p>
+        <a href="../../index.html">← Volver al inicio</a>
+        <div class="hidden-trigger" id="hidden-trigger"></div>
+    </div>
+
+    <!-- Real Admin Content (hidden) -->
+    <div class="admin-content" id="admin-content">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1><a href="../../index.html" style="text-decoration: none; color: inherit;">RuVaz<span class="gradient-text">Tech</span></a></h1>
+                    <span class="admin-badge">Admin</span>
+                </div>
+                <nav class="nav">
+                    <a href="../../index.html" class="nav-link">👁️ Ver Blog</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Admin Content -->
+    <main class="admin-main">
+        <div class="admin-container">
+            <!-- Sidebar - Posts List -->
+            <aside class="admin-sidebar">
+                <div class="sidebar-header">
+                    <h2>📝 Mis Artículos</h2>
+                </div>
+                
+                <button class="btn btn-primary btn-full" id="new-post-btn">
+                    ➕ Crear Nuevo Artículo
+                </button>
+                
+                <div class="posts-list" id="posts-list">
+                    <!-- Posts will be loaded here -->
+                </div>
+                
+                <div class="sidebar-actions">
+                    <button class="btn btn-info btn-full" id="sync-btn">🔄 Recargar desde blog.js</button>
+                    <button class="btn btn-secondary btn-full" id="import-btn">📥 Importar JSON</button>
+                    <button class="btn btn-success btn-full" id="export-btn">📤 Exportar para blog.js</button>
+                    <button class="btn btn-danger btn-full" id="clear-all-btn">🗑️ Borrar Todo</button>
+                </div>
+            </aside>
+
+            <!-- Editor Area -->
+            <section class="editor-section" id="editor-section">
+                <!-- Empty State -->
+                <div class="empty-state" id="empty-state">
+                    <div class="empty-icon">📝</div>
+                    <h2>Bienvenido al Editor</h2>
+                    <p>Selecciona un artículo de la lista o crea uno nuevo para comenzar a escribir.</p>
+                    <button class="btn btn-primary btn-large" id="empty-new-btn">
+                        ➕ Crear Mi Primer Artículo
+                    </button>
+                </div>
+                
+                <!-- Editor Form (hidden initially) -->
+                <div class="editor-form" id="editor-form" style="display: none;">
+                    <div class="editor-header">
+                        <div class="editor-status">
+                            <span class="status-indicator" id="status-indicator">●</span>
+                            <span id="status-text">Sin guardar</span>
+                        </div>
+                    </div>
+                    
+                    <input type="text" id="post-title" class="title-input" placeholder="Escribe el título aquí...">
+                    
+                    <div class="editor-meta">
+                        <div class="meta-field">
+                            <label>📅 Fecha</label>
+                            <input type="date" id="post-date" class="date-input">
+                        </div>
+                        <div class="meta-field">
+                            <label>🏷️ Tags (separados por coma)</label>
+                            <input type="text" id="post-tags" class="tags-input" placeholder="javascript, web, tutorial">
+                        </div>
+                    </div>
+
+                    <div class="excerpt-section">
+                        <label for="post-excerpt">📄 Descripción corta (aparece en la tarjeta y SEO)</label>
+                        <textarea id="post-excerpt" class="excerpt-input" placeholder="Breve descripción del artículo..."></textarea>
+                    </div>
+
+                    <div class="image-section">
+                        <label>🖼️ Imagen del artículo (opcional)</label>
+                        <div class="image-input-group">
+                            <input type="text" id="post-image" class="image-input" placeholder="Nombre del archivo (ej: mi-articulo.jpg)">
+                            <span class="image-path-hint">📁 Las imágenes deben estar en: /images/</span>
+                        </div>
+                        <div class="image-preview" id="image-preview">
+                            <span class="preview-placeholder">Vista previa de imagen</span>
+                        </div>
+                    </div>
+
+                    <!-- Toolbar -->
+                    <div class="toolbar-section">
+                        <label>✏️ Contenido del artículo</label>
+                        <div class="editor-toolbar">
+                            <button class="toolbar-btn" data-command="bold" title="Negrita"><strong>B</strong></button>
+                            <button class="toolbar-btn" data-command="italic" title="Cursiva"><em>I</em></button>
+                            <div class="toolbar-divider"></div>
+                            <button class="toolbar-btn" data-command="h2" title="Título">H2</button>
+                            <button class="toolbar-btn" data-command="h3" title="Subtítulo">H3</button>
+                            <button class="toolbar-btn" data-command="paragraph" title="Párrafo">P</button>
+                            <div class="toolbar-divider"></div>
+                            <button class="toolbar-btn" data-command="ul" title="Lista">• Lista</button>
+                            <button class="toolbar-btn" data-command="ol" title="Lista numerada">1. Lista</button>
+                            <div class="toolbar-divider"></div>
+                            <button class="toolbar-btn" data-command="code" title="Código">&lt;/&gt;</button>
+                            <button class="toolbar-btn" data-command="pre" title="Bloque de código">código</button>
+                        </div>
+                    </div>
+
+                    <!-- Content Editor -->
+                    <div class="editor-content" id="editor-content" contenteditable="true">
+                    </div>
+
+                    <!-- Editor Actions -->
+                    <div class="editor-actions">
+                        <div class="actions-left">
+                            <button class="btn btn-success btn-large" id="save-btn">💾 Guardar Artículo</button>
+                            <button class="btn btn-secondary" id="preview-btn">👁️ Vista Previa</button>
+                        </div>
+                        <div class="actions-right">
+                            <button class="btn btn-danger" id="delete-btn">🗑️ Eliminar Este Artículo</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Preview Modal -->
+    <div class="modal" id="preview-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Vista Previa</h2>
+                <button class="modal-close" id="close-preview">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="preview-container" id="preview-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Export Modal -->
+    <div class="modal" id="export-modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>📤 Exportar Artículos</h2>
+                <button class="modal-close" id="close-export">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="export-info">
+                    <p><strong>Instrucciones:</strong></p>
+                    <ol>
+                        <li>Copia el código de abajo</li>
+                        <li>Abre tu archivo <code>blog.js</code></li>
+                        <li>Reemplaza todo el contenido del array <code>blogPosts</code> con este código</li>
+                        <li>Guarda y sube a GitHub</li>
+                    </ol>
+                </div>
+                <textarea id="export-code" class="export-textarea" readonly></textarea>
+                <button class="btn btn-primary btn-full" id="copy-export-btn">📋 Copiar al Portapapeles</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Import Modal -->
+    <div class="modal" id="import-modal">
+        <div class="modal-content modal-large">
+            <div class="modal-header">
+                <h2>📥 Importar Artículos</h2>
+                <button class="modal-close" id="close-import">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p class="export-instructions">Pega el array JSON de artículos o el contenido de blogPosts:</p>
+                <textarea id="import-code" class="export-textarea" placeholder='[{"id": 1, "title": "...", ...}]'></textarea>
+                <button class="btn btn-primary btn-full" id="do-import-btn">📥 Importar Artículos</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div class="toast-container" id="toast-container"></div>
+    </div> <!-- End admin-content -->
+
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Load blog posts data -->
+    <script src="../js/blog.js"></script>
+    
+    <!-- Admin Panel Logic -->
+    <script src="z4n2.js"></script>
+
+    <!-- Password Protection -->
+    <script>
+        (function() {
+            const SECRET_KEY = 'ruvaz2024';
+            const trigger = document.getElementById('hidden-trigger');
+            const fake404 = document.getElementById('fake-404');
+            const adminContent = document.getElementById('admin-content');
+            let clickCount = 0;
+            let clickTimer;
+
+            trigger.addEventListener('click', function() {
+                clickCount++;
+                clearTimeout(clickTimer);
+                
+                if (clickCount >= 3) {
+                    Swal.fire({
+                        title: '🔐',
+                        input: 'password',
+                        inputPlaceholder: 'Clave de acceso',
+                        showCancelButton: true,
+                        confirmButtonText: 'Entrar',
+                        cancelButtonText: 'Cancelar',
+                        background: '#1a1a2e',
+                        color: '#fff',
+                        confirmButtonColor: '#0ea5e9',
+                        inputAttributes: {
+                            autocapitalize: 'off',
+                            autocorrect: 'off'
+                        }
+                    }).then((result) => {
+                        if (result.isConfirmed && result.value === SECRET_KEY) {
+                            fake404.style.display = 'none';
+                            adminContent.style.display = 'block';
+                            document.title = 'Panel Admin - RuVaz Tech Blog';
+                        } else if (result.isConfirmed) {
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Acceso denegado',
+                                background: '#1a1a2e',
+                                color: '#fff'
+                            });
+                        }
+                    });
+                    clickCount = 0;
+                } else {
+                    clickTimer = setTimeout(() => { clickCount = 0; }, 500);
+                }
+            });
+        })();
+    </script>
+</body>
+</html>

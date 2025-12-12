@@ -1,0 +1,6 @@
+# RuVaz Tech Blog Robots.txt
+User-agent: *
+Allow: /
+
+# Disallow hidden admin area
+Disallow: /assets/core/
